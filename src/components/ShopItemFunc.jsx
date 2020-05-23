@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/main.css';
-
+import PropTypes from 'prop-types';
+import Item from '../models/Item.js';
 export default function ShopItemFunc(props)
 {
     const {item} = props;
@@ -24,3 +25,14 @@ export default function ShopItemFunc(props)
         </div>
     )
 }
+
+ShopItemFunc.propTypes= {
+    item: PropTypes.shape({
+        brand: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        descriptionFull: PropTypes.string,
+        currency: PropTypes.symbol,
+        price: PropTypes.number
+    })
+};
